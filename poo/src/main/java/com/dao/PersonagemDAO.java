@@ -13,6 +13,8 @@ import com.projetoopoo.Personagens;
 
 public class PersonagemDAO extends Conexaos{
 
+  //Inserção de dados no BD
+  
   public void create(Personagens p){
 
     abrir();
@@ -49,6 +51,9 @@ public class PersonagemDAO extends Conexaos{
 
   }
     
+  
+  //Faz uma consulta no BD e retorna todos os dados que estão dentro da tabela
+  
   public static List<Personagens> listarPersonagens(){
     ArrayList<Personagens> resu = new ArrayList<>();
     
@@ -76,25 +81,13 @@ public class PersonagemDAO extends Conexaos{
 
     }catch (SQLException e){
       e.printStackTrace();
-    }finally{
-
-      try{
-        if(conn != null){
-          conn.close();
-        }
-        if(conn != null){
-          conn.close();
-        }
-
-      }catch (Exception e){
-        e.printStackTrace();
-      }
     }
  
     
   return resu;
   }
   
+  //Editar dados no BD
   public void edit(Personagens p){
 
     conn = abrir();
@@ -121,6 +114,7 @@ public class PersonagemDAO extends Conexaos{
 
   }
 
+  //Deletar dados no BD
   public Personagens delete(int pk)  {
 
     conn = abrir();
@@ -139,6 +133,7 @@ public class PersonagemDAO extends Conexaos{
     return null;
   }
 
+  //Buscar informações no BD
   public Personagens buscar(int pk) {
     Personagens resu = null;
     conn = abrir();
