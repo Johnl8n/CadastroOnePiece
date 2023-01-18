@@ -93,6 +93,7 @@ public class Personagens {
     }
   }
 
+  
   public static Personagens delete(int pk){
     return dao.delete(pk);
   }
